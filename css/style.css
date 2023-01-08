@@ -169,7 +169,6 @@ h1 {
     font-weight: 700;
     line-height: 50px;
     color: var(--title);
-    text-shadow: 0 4px 4px #00000040;
 }
 
 h2 {
@@ -787,6 +786,17 @@ details[open] summary:before {
     word-spacing: 15px;
 }
 
+.footer__github {
+    display: flex;
+    gap: 19px;
+}
+
+.footer__github a,
+.footer__github p {
+    color: black;
+    line-height: 50px;
+}
+
 .footer__rsschool {
     text-align: center;
 }
@@ -802,14 +812,14 @@ details[open] summary:before {
     align-items: center;
 }
 
-.footer__container > a:hover {
+.footer__container a:hover {
     transform: scale(1.02);
-    transition: all 0.3s ease-in-out;
+    transition: transform 0.1s ease-in-out;
 }
 
 .footer__list > li:hover {
     transform: scale(1.05);
-    transition: all 0.3s ease-in-out;
+    transition: transform 0.1s ease-in-out;
 }
 
 /*----------------- media -----------------*/
