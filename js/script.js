@@ -1,6 +1,7 @@
+// ----------------- Burger -----------------
 const burger = document.querySelector('.header__burger');
 const menyBurger = document.querySelector('.header__menu');
-const bodyLock = document.querySelector('body');
+const htmlLock = document.querySelector('html');
 const links = document.querySelectorAll('.nav__item');
 
 burger.addEventListener('click', toggleMenu);
@@ -10,10 +11,42 @@ burger.addEventListener('click', toggleMenu);
 });
 
 function toggleMenu() {
-    burger.classList.toggle('active');
-    menyBurger.classList.toggle('active');
-    bodyLock.classList.toggle('lock');
+    burger.classList.toggle('active-burg');
+    menyBurger.classList.toggle('active-menu');
+    htmlLock.classList.toggle('lock');
 }
+
+document.addEventListener('click', outsideClickMenu);
+function outsideClickMenu(e) {
+    const clickMenu = e.composedPath().includes(menyBurger);
+    const clickBurger = e.composedPath().includes(burger);
+
+    if (!clickMenu && !clickBurger) {
+        burger.classList.remove('active-burg');
+        menyBurger.classList.remove('active-menu');
+        htmlLock.classList.remove('lock');
+    }
+}
+
+// ----------------- prices__accordion -----------------
+
+const details = document.querySelectorAll('.price__wrapper > details');
+
+function onTogglePrice(event) {
+    const detailsOpen = document.querySelectorAll('.price__wrapper > details[open]');
+
+    if (event.target.open) {
+        detailsOpen.forEach((el) => {
+            if (el !== event.target) {
+                el.open = false;
+            }
+        });
+    }
+}
+
+details.forEach((el) => el.addEventListener('toggle', onTogglePrice));
+
+// ----------------- dropdowns prices -----------------
 
 const dropdowns = document.querySelectorAll('.dropdown');
 
@@ -45,11 +78,13 @@ dropdowns.forEach((dropdown) => {
     });
 });
 
-console.group('%cPlants#1', 'color: red');
-console.log('Вёрстка валидная. ' + '%c+10', 'color: red');
-console.log('Вёрстка семантическая. ' + '%c+20', 'color: red');
-console.log('Вёрстка соответствует макету. ' + '%c+48', 'color: red');
-console.log('Требования к css. ' + '%c+12', 'color: red');
-console.log('Интерактивность, реализуемая через css. ' + '%c+20', 'color: red');
-console.log('%cВСЕГО: +110', 'color: red');
+console.group('%cPlants#2', 'color: red');
+console.log('Вёрстка соответствует макету. Ширина экрана 768px ' + '%c+24', 'color: red');
+console.log('Вёрстка соответствует макету. Ширина экрана 380px ' + '%c+24', 'color: red');
+console.log(
+    'Ни на одном из разрешений до 320px включительно не появляется горизонтальная полоса прокрутки.\nВесь контент страницы при этом сохраняется: не обрезается и не удаляется ' +
+        '%c+15',
+    'color: red'
+);
+console.log('На ширине экрана 380рх и меньше реализовано адаптивное меню ' + '%c+22', 'color: red');
 console.groupEnd();
