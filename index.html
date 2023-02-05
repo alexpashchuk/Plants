@@ -85,20 +85,14 @@
                             <div class="service__title">
                                 <h2>Service and our projects</h2>
                                 <div class="service__buttons">
-                                    <button class="button">
-                                        <span>Gardens</span>
-                                    </button>
-                                    <button class="button">
-                                        <span>Lawn</span>
-                                    </button>
-                                    <button class="button">
-                                        <span>Planting</span>
-                                    </button>
+                                    <button class="service__button" data-btn="garden">Gardens</button>
+                                    <button class="service__button" data-btn="lawn">Lawn</button>
+                                    <button class="service__button" data-btn="planting">Planting</button>
                                 </div>
                             </div>
                             <div class="service__row">
                                 <div class="service__column">
-                                    <div class="item-service">
+                                    <div class="item-service" data-card="garden">
                                         <div class="item-service__img">
                                             <img src="./assets/img/garden-aloe.jpg" alt="garden-aloe" />
                                         </div>
@@ -109,7 +103,7 @@
                                     </div>
                                 </div>
                                 <div class="service__column">
-                                    <div class="item-service">
+                                    <div class="item-service" data-card="planting">
                                         <div class="item-service__img">
                                             <img src="./assets/img/planting-lime.jpg" alt="planting-lime" />
                                         </div>
@@ -120,7 +114,7 @@
                                     </div>
                                 </div>
                                 <div class="service__column">
-                                    <div class="item-service">
+                                    <div class="item-service" data-card="lawn">
                                         <div class="item-service__img">
                                             <img src="./assets/img/lawn-spray.jpg" alt="lawn-spray" />
                                         </div>
@@ -131,7 +125,7 @@
                                     </div>
                                 </div>
                                 <div class="service__column">
-                                    <div class="item-service">
+                                    <div class="item-service" data-card="planting">
                                         <div class="item-service__img">
                                             <img src="./assets/img/planting-rose.jpg" alt="planting-rose" />
                                         </div>
@@ -142,7 +136,7 @@
                                     </div>
                                 </div>
                                 <div class="service__column">
-                                    <div class="item-service">
+                                    <div class="item-service" data-card="garden">
                                         <div class="item-service__img">
                                             <img src="./assets/img/garden-pot.jpg" alt="garden-pot" />
                                         </div>
@@ -154,7 +148,7 @@
                                     </div>
                                 </div>
                                 <div class="service__column">
-                                    <div class="item-service">
+                                    <div class="item-service" data-card="planting">
                                         <div class="item-service__img">
                                             <img src="./assets/img/planting-cactus.jpg" alt="planting-cactus" />
                                         </div>
@@ -182,7 +176,7 @@
                                             <div class="price__amount">
                                                 <span>$<span class="price__number">15</span></span> / per hour
                                             </div>
-                                            <button class="price__btn">Order</button>
+                                            <a href="#contacts" class="price__btn">Order</a>
                                         </div>
                                     </details>
                                     <details class="price">
@@ -195,7 +189,7 @@
                                             <div class="price__amount">
                                                 <span>$<span class="price__number">25</span> </span> / per hour
                                             </div>
-                                            <button class="price__btn">Order</button>
+                                            <a href="#contacts" class="price__btn">Order</a>
                                         </div>
                                     </details>
                                     <details class="price">
@@ -208,7 +202,7 @@
                                             <div class="price__amount">
                                                 <span>$<span class="price__number">35</span> </span> / per hour
                                             </div>
-                                            <button class="price__btn">Order</button>
+                                            <a href="#contacts" class="price__btn">Order</a>
                                         </div>
                                     </details>
                                 </div>
@@ -231,18 +225,19 @@
                             <div class="contacts__content">
                                 <h2>Contact us</h2>
                                 <div class="dropdown">
-                                    <div class="select">
-                                        <span class="selected">City</span>
-                                        <div class="caret">
+                                    <div class="select" tabindex="0">
+                                        <span class="value">City</span>
+                                        <div class="select__arrow">
                                             <img src="./assets/icons/arrow-open.svg" alt="arrow" />
                                         </div>
+                                        <ul class="menu hidden-list">
+                                            <li class="option" data-value="canandaigua">Canandaigua, NY</li>
+                                            <li class="option" data-value="newYork">New York City</li>
+                                            <li class="option" data-value="yonkers">Yonkers, NY</li>
+                                            <li class="option" data-value="sherrill">Sherrill, NY</li>
+                                        </ul>
                                     </div>
-                                    <ul class="menu">
-                                        <li>Canandaigua, NY</li>
-                                        <li>New York City</li>
-                                        <li>Yonkers, NY</li>
-                                        <li>Sherrill, NY</li>
-                                    </ul>
+                                    <div class="dropdown__card-root"></div>
                                 </div>
                             </div>
                         </div>
