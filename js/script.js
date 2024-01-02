@@ -276,12 +276,3 @@ buttons.forEach((button) => {
         toggleButtons(event);
     });
 });
-
-console.group('%cPlants#3', 'color: red');
-console.log(
-    'При нажатии на кнопки:Gargens,Lawn,Planting происходит смена фокуса на услугах в разделе service ' + '%c+50',
-    'color: red'
-);
-console.log('Accordion в секции prices реализация 3-х выпадающих списков об услугах и ценах  ' + '%c+50', 'color: red');
-console.log('В разделе contacts реализован select с выбором городов' + '%c+25', 'color: red');
-console.groupEnd();
